@@ -1,25 +1,12 @@
-enable-magisk-update = true # set this to false if you do not want to receive updates for the module in magisk app
-parallel-jobs = 1
-
-# add 'enabled = false' for not patching a specific app or remove it from the config
-# see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
-
-# you can use rvmm-config-gen to generate a config
-
 [YouTube]
-build-mode = "both"                                                   
-excluded-patches = "'Enable debugging'"                                
-included-patches = ""                                                 
-version = "auto"                                                   
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube/"
-module-prop-name = "yt-rv"
+apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube/"
+arch = "arm64-v8a"
+build-mode = "both"
+patcher-args = "-e 'Custom branding icon for YouTube' -OappIcon=MMT -e 'Custom branding name for YouTube' -OappName=YouTube -e 'Custom header for YouTube' -OcustomHeader=Premium"
 
 [Music]
+apkmirror-dlurl = "https://apkmirror.com/apk/google-inc/youtube-music/"
+arch = "arm64-v8a"
 build-mode = "both"
-app-name = "YouTube-Music"
-excluded-patches = ""
-included-patches = "'Compact header'"
-version = "auto"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music/"
-module-prop-name = "ytm-rv"
-arch = "both"
+patcher-args = "-e 'Custom branding icon for YouTube Music' -OappIcon=MMT -e 'Custom branding name for YouTube Music' -OappNameNotification=Music -e 'Custom header for YouTube Music' -OcustomHeader=Teaqaria
+"
